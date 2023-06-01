@@ -2,10 +2,21 @@ import React, { useState } from "react";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 import "../style/componentB.css";
 
-const ComponentB = ({ cendol, handleIncreaseCounter, backgroundclr }) => {
+const ComponentB = ({ cendol, handleIncreaseCounter }) => {
   const [clr, setClr] = useState(false);
   console.log(clr);
+  const [backgroundclr, setBackgroundclr] = useState("#FFFF00");
+  const getRandomColor = () => {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
   const handleclr = () => {
+    const randomColor = getRandomColor();
+    setBackgroundclr(randomColor);
     setClr(!clr);
   };
   return (
@@ -21,13 +32,6 @@ const ComponentB = ({ cendol, handleIncreaseCounter, backgroundclr }) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            // width: 150px;
-            // height: 150px;
-            // border-radius: 50%;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: center;
-            // align-items: center;
           }}
         >
           <h2>{cendol}</h2>
