@@ -40,12 +40,21 @@
     align-items: center; 
 
 }
-button{
+.button1{
     border: none;
     margin: 5rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    background-color: rgba(68, 105, 153, 0.884);
+    background-color: red;
+    color: white;
+    font-weight: 900;
+}
+.button2{
+    border: none;
+    margin: 5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: blue;
     color: white;
     font-weight: 900;
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { findRenderedComponentWithType } from "react-dom/test-utils";
 import "../style/componentB.css";
 
-const ComponentB = ({ cendol, handleIncreaseCounter }) => {
+const ComponentB = ({ cendol, handleIncreaseCounter, backgroundclr }) => {
   const [clr, setClr] = useState(false);
   console.log(clr);
   const handleclr = () => {
@@ -11,7 +11,25 @@ const ComponentB = ({ cendol, handleIncreaseCounter }) => {
   return (
     <div className="container">
       <div className="card">
-        <div className={clr ? "blucircle" : "redcircle"}>
+        <div
+          style={{
+            backgroundColor: backgroundclr,
+            width: "150px",
+            height: "150px",
+            borderRadius: "50%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            // width: 150px;
+            // height: 150px;
+            // border-radius: 50%;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+          }}
+        >
           <h2>{cendol}</h2>
 
           <p
@@ -28,8 +46,10 @@ const ComponentB = ({ cendol, handleIncreaseCounter }) => {
           </p>
         </div>
       </div>
-      <div className="button">
-        <button onClick={handleclr}>Change Color</button>
+      <div>
+        <button className={clr ? " button1" : "button2"} onClick={handleclr}>
+          Change Color
+        </button>
       </div>
     </div>
   );
